@@ -48,11 +48,11 @@ export class UserController {
     }
   }
 
-  // Get user by its ID
-  @Get(':id')
-  async getUser(@Param('id') id: string): Promise<User | object> {
+  // Get user by its email
+  @Get(':email')
+  async getUser(@Param('email') email: string): Promise<User | object> {
     try {
-      const result = await this.userService.getUser(id);
+      const result = await this.userService.getUser(email);
       this.logger.log(
         `User fetched from the database ${JSON.stringify(result)}`,
       );

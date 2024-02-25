@@ -40,10 +40,10 @@ export class UserService {
     }
   }
 
-  // Get user by its ID
-  async getUser(id: string): Promise<User | object> {
+  // Get user by its email
+  async getUser(email: string): Promise<User | object> {
     try {
-      const result = await this.userModel.findById(id).exec();
+      const result = await this.userModel.find({ email }).exec();
       return !result ? { message: 'No users found' } : result;
     } catch (err) {
       throw new Error(`Failed to fetch user by its id: ${err.message}`);
