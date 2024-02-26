@@ -25,6 +25,7 @@
     "@nestjs/core": "^10.0.0",
     "@nestjs/mongoose": "^10.0.4",
     "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/swagger": "^7.3.0",
     "@typegoose/typegoose": "^12.2.0",
     "bcrypt": "^5.1.1",
     "class-validator": "^0.14.1",
@@ -32,7 +33,8 @@
     "dotenv": "^16.4.5",
     "moongose": "^1.0.0",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",

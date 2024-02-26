@@ -11,16 +11,19 @@ import {
   HttpStatus,
   Logger,
 } from '@nestjs/common';
-import { UserService } from './user.service';
-import { User } from './user.schema';
-import { CreateUserDto, UpdateUserDto } from './user.dto';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
+import { UserService } from '../services/user.service';
+import { User } from '../schemas/user.schema';
+import { CreateUserDto, UpdateUserDto } from '../dto/user.dto';
 
+@ApiTags('users')
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
   private readonly logger = new Logger(UserController.name);
 
   // Create user entry in the database
+  @ApiOperation({ summary: 'Create a new user' })
   @Post()
   async createUser(@Body() createUserDto: CreateUserDto): Promise<User> {
     try {
@@ -34,6 +37,7 @@ export class UserController {
   }
 
   // Find all users registered in the database
+  @ApiOperation({ summary: 'Find all users in the database' })
   @Get()
   async findAll(): Promise<User[] | object> {
     try {
@@ -49,6 +53,7 @@ export class UserController {
   }
 
   // Get user by its email
+  @ApiOperation({ summary: 'Get a user data by its email' })
   @Get(':email')
   async getUser(@Param('email') email: string): Promise<User | object> {
     try {
@@ -64,11 +69,12 @@ export class UserController {
   }
 
   // Update user information in the database by its ID
+  @ApiOperation({ summary: 'Update user data by its ID' })
   @Put(':id')
   async updateUser(
     @Param('id') id: string,
     @Body() updateUserDto: UpdateUserDto,
-  ): Promise<User> {
+  ): Promise<User | object> {
     try {
       const result = await this.userService.updateUser(id, updateUserDto);
       this.logger.log(`User updated in the database ${JSON.stringify(result)}`);
@@ -80,6 +86,7 @@ export class UserController {
   }
 
   // Soft delete the user
+  @ApiOperation({ summary: 'Soft delete user' })
   @Delete(':id')
   @HttpCode(200)
   async deleteUser(@Param('id') id: string): Promise<object> {
