@@ -32,7 +32,7 @@ $ npm run start:prod
 
 ## Stay in touch
 ```bash
-$ Swagger live on: [http://localhost:3000/api]
+- Swagger live on: [http://localhost:3000/api](http://localhost:3000/api)
 ```
 
 ## Stay in touch
