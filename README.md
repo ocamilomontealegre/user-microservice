@@ -31,6 +31,11 @@ $ npm run start:prod
 ```
 
 ## Stay in touch
+```bash
+$ Swagger live on: [http://localhost:3000/api]
+```
+
+## Stay in touch
 
 - Author - [Camilo Montealegre]
 - Github - [https://github.com/ocamilomontealegre](https://github.com/ocamilomontealegre)
