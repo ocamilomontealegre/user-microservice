@@ -4,7 +4,6 @@ import { UserModule } from './models/user.module';
 import { ConfigService } from '@nestjs/config';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { say } from 'cowsay';
-import { User } from './schemas/user.schema';
 
 async function bootstrap() {
   const app = await NestFactory.create(UserModule);
