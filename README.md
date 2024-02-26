@@ -30,7 +30,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Stay in touch
+## Swagger
 
 - Swagger - [http://localhost:3000/api](http://localhost:3000/api)
 
