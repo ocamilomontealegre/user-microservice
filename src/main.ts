@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import { Logger } from '@nestjs/common';
 import { UserModule } from './models/user.module';
 import { ConfigService } from '@nestjs/config';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
@@ -6,6 +7,7 @@ import { say } from 'cowsay';
 
 async function bootstrap() {
   const app = await NestFactory.create(UserModule);
+  const logger = new Logger('Main');
 
   const configService = app.get(ConfigService);
   const PORT = configService.get<number>('PORT') || 3000;
@@ -17,6 +19,7 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
+  logger.log(`Swagger live on http://localhost:${PORT}/api`);
 
   await app.listen(PORT, (): void =>
     console.log(

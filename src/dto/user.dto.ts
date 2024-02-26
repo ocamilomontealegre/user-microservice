@@ -33,10 +33,6 @@ export class UpdateUserDto {
   age?: number;
 
   @IsOptional()
-  @IsEmail()
-  email?: string;
-
-  @IsOptional()
   @MinLength(6)
   password?: string;
 }
