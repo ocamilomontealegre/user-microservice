@@ -9,7 +9,7 @@
 
 ## Description
 
-[Nest](https://github.com/ocamilomontealegre/user-microservice) User microservice for the social network app
+[User Microservice](https://github.com/ocamilomontealegre/authentication-microservice) for the social network app
 
 ## Installation
 
@@ -32,7 +32,7 @@ $ npm run start:prod
 
 ## Swagger
 
-- Swagger - [http://localhost:3000/api](http://localhost:3000/api)
+- Swagger - [http://localhost:3001/api](http://localhost:3001/api)
 
 
 ## Stay in touch
